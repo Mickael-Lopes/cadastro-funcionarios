@@ -1,0 +1,9 @@
+{
+  "name": "EC02 - Funcionários",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "funcionarios",
+  "workspaceFolder": "/app",
+  "overrideCommand": false,
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [8080]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cadastro-funcionarios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EC02 - Sistema de Gestão de Funcionários",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": { "node": ">=22" }
+}

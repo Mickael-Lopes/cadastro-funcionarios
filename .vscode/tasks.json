@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Iniciar com Docker", "type": "shell", "command": "docker compose up --build", "problemMatcher": [] },
+    { "label": "Parar Docker", "type": "shell", "command": "docker compose down", "problemMatcher": [] },
+    { "label": "Testar no Docker", "type": "shell", "command": "docker compose exec funcionarios npm test", "problemMatcher": [] }
+  ]
+}

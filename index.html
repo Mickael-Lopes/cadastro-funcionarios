@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Funcionários</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="funcionario.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="etiqueta">STARTUP · GESTÃO DE PESSOAS</span>
+      <h1>Gestão de Funcionários</h1>
+      <p>Cadastre sua equipe, atualize os dados e acompanhe os relatórios.</p>
+    </header>
+
+    <section class="painel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Cadastrar funcionário</h2>
+      <form id="formulario">
+        <div class="campos">
+          <label>Nome<input type="text" id="nome" required autocomplete="name"></label>
+          <label>Idade<input type="number" id="idade" min="1" step="1" required></label>
+          <label>Cargo<input type="text" id="cargo" required></label>
+          <label>Salário (R$)<input type="number" id="salario" min="0" step="0.01" required></label>
+        </div>
+        <div class="acoes-formulario">
+          <button type="submit" id="cadastrar">Cadastrar</button>
+          <button type="button" id="cancelar" class="secundario" hidden>Cancelar edição</button>
+        </div>
+      </form>
+      <p id="mensagem" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="painel" aria-labelledby="titulo-lista">
+      <div class="titulo-linha"><h2 id="titulo-lista">Funcionários cadastrados</h2><span id="quantidade" class="etiqueta">0 funcionários</span></div>
+      <div class="tabela-container">
+        <table>
+          <caption class="sr-only">Lista de funcionários e ações para editar ou excluir</caption>
+          <thead><tr><th scope="col">Nome</th><th scope="col">Idade</th><th scope="col">Cargo</th><th scope="col">Salário</th><th scope="col">Ações</th></tr></thead>
+          <tbody id="lista-funcionarios"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-relatorios">
+      <div class="titulo-linha"><h2 id="titulo-relatorios">Relatórios</h2><span class="nota">Atualizados automaticamente</span></div>
+      <div class="relatorios">
+        <article class="painel"><h3>Salários acima de R$ 5.000</h3><ul id="salarios-altos"></ul></article>
+        <article class="painel"><h3>Média salarial</h3><p id="media-salarial" class="valor">—</p><p class="nota">Considera todos os funcionários cadastrados.</p></article>
+        <article class="painel"><h3>Cargos únicos</h3><ul id="cargos-unicos"></ul></article>
+        <article class="painel"><h3>Nomes em maiúsculo</h3><ul id="nomes-maiusculos"></ul></article>
+      </div>
+    </section>
+    <footer>Os dados ficam em memória durante esta sessão e são apagados ao recarregar a página.</footer>
+  </main>
+</body>
+</html>
